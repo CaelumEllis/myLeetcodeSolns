@@ -1,5 +1,3 @@
-
-
 /*
  * @lc app=leetcode id=13 lang=cpp
  *
@@ -12,13 +10,6 @@
 #include <string>
 using namespace std;
 
-int I = 1;
-int V = 5;
-int X = 10;
-int L = 50;
-int C = 100;
-int D = 500;
-int M = 1000;
 class Solution {
 public:
     int romanToInt(string s) {
@@ -33,11 +24,10 @@ public:
         for (int i = 0; i < length; i++)
         {
             arr2[0] = arr[i];
-            if (i+1 > length){
+            if (i+1 >= length){
                 arr2[1] = 0;
             } else { 
                 arr2[1] = arr[i+1];}
-            
             
             int x = 0;
             while(x < 2 ){
@@ -63,11 +53,9 @@ public:
             if (arr3[0] < arr3[1] && arr3[1] != 0){
                 cnt = cnt - arr3[0];
             } else {
-                cnt = cnt + arr[0];
+                cnt = cnt + arr3[0];
             }
         }
-
-
        return cnt;
     }
 };
