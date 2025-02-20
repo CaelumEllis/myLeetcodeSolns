@@ -18,9 +18,9 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        
+      int l1Length = (*l1).length();
 
-        
+        return l1Length;
     }
 };
 // @lc code=end
