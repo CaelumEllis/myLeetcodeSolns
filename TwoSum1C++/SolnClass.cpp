@@ -4,18 +4,24 @@
 
 using namespace std;
 
-
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-    size_t n = nums.size();
-    for (size_t i = 0; i < n; i++) {
-        for (size_t j = i + 1; j < n; j++) {
-            if (nums[i] + nums[j] == target) {
-                return {static_cast<int>(i), static_cast<int>(j)};
+
+    vector<int> twoSum(std::vector<int>& nums, int target) {
+        std::unordered_map<int, std::size_t> partners {};
+    
+        for(int i = 0; i < nums.size(); i++ ){
+            int value = nums[i];
+            int matchingVal = target - value;
+    
+            if(partners.contains(matchingVal)){
+                int j = partners[matchingVal];
+                return{i, j};
             }
-        }
-    }
-       return {}; 
+            else {
+                partners[value] = i;
+            }
+        } 
+        return {0,0};
     }
 };
